@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+}
+.wrapper .parallax-container {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.wrapper .parallax-container .parallax {
+  flex: 1 1 auto;
+  background-image: url("https://i.pinimg.com/originals/e0/57/44/e05744161d7500a183d5ec3a38a6e626.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  color: #dcdcdc;
+  text-align: center;
+}
+.wrapper .parallax-container .parallax h1 {
+  font-size: 6rem;
+  line-height: 6.75rem;
+  font-family: "Permanent Marker", cursive;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+body .content {
+  overflow: hidden;
+  font-family: "Permanent Marker";
+  flex-grow: 1;
+  height: calc(100% - 80px);
+}
+body .content .lyrics {
+  padding: 50vh 0;
+  min-height: calc(100vh - 80px);
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  text-align: center;
+  transition: all 0.25s;
+  position: relative;
+}
+body .content .lyrics > div {
+  position: relative;
+  font-size: 30px;
+  line-height: 1400px;
+  color: #666;
+  transition: all 0.25s;
+}
+body .content .lyrics > div:before {
+  content: attr(note);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+}
+body .content .lyrics > div.highlighted {
+  color: #fff;
+  font-size: 48px;
+}
+
+@keyframes pop-in {
+  0%,
+  95% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
